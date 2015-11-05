@@ -17,6 +17,7 @@ import org.apache.hadoop.util.ToolRunner;
 
 import lca.keyvalues.LongPair;
 import lca.keyvalues.TextPair;
+import lca.partitioner.SecondTextPartitioner;
 
 
 
@@ -43,10 +44,12 @@ public class PercentageOfWithdralsAndDenialsDriver extends Configured implements
 		job.setMapOutputKeyClass(TextPair.class);
 		job.setMapOutputValueClass(LongPair.class);
 		
+		job.setPartitionerClass(SecondTextPartitioner.class);
+		
 		job.setCombinerClass(PercentageOfWithdralsAndDenialsCombiner.class);
 		job.setReducerClass(PercentageOfWithdralsAndDenialsReducer.class);
 		
-		job.setNumReduceTasks(2);
+		job.setNumReduceTasks(4);
 		job.setOutputKeyClass(TextPair.class);
 		job.setOutputValueClass(LongPair.class);	
 		

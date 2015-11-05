@@ -11,16 +11,23 @@ import lca.keyvalues.TextPair;
 import lca.parsers.LCAparsers;
 
 
+
 		public class PercentageOfWithdralsAndDenialsMapper extends Mapper<LongWritable, Text, TextPair, LongPair> {
 		private static LCAparsers parser = new LCAparsers();
-		
+		public enum NoOfRecords {
+			NO_OF_RECORDS
+		}
 		private static TextPair mapOutputKey = new TextPair();
 		private static LongPair mapOutputValue = new LongPair();
 		public static long var = new Long(0);
-		public long number = new Long(0);
+		public static long number = new Long(0);
+			
+		
 		public void map(LongWritable lineOffset, Text record, Context context) throws IOException, InterruptedException {
 			
+				
 			parser.parse(record.toString());
+
 			
 			mapOutputKey.setFirst(new Text(parser.getLcaCaseEmployerName()));
 			mapOutputKey.setSecond(new Text(parser.getCaseSubmitYear()));
@@ -38,5 +45,4 @@ import lca.parsers.LCAparsers;
 			}
 			context.write(mapOutputKey, mapOutputValue);	
 		}
-
 }

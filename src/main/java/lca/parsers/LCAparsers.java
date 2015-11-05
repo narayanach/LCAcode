@@ -9,6 +9,7 @@ package lca.parsers;
 		private String status;
 		private String lcaCaseSubmit;
 		private String lcaCaseEmployerName;
+		private String fullTimePos;
 
 		
 		
@@ -18,9 +19,8 @@ package lca.parsers;
 				  
 			status 						= fields[1];
 			lcaCaseSubmit 				= fields[2];				 
-			fields[7]          			= fields[7].replace(",","\0");
-			fields[7]			        = fields[7].replace(".","\0");
-			lcaCaseEmployerName			= fields[7];
+			lcaCaseEmployerName	     	= fields[7].replace(",", "\0").replace(".", "\0").replace("\" ", "\0").replace(" ", "\0");
+				
 		}
 
 		
@@ -68,8 +68,7 @@ package lca.parsers;
 		public void setLcaCaseEmployerName(String lcaCaseEmployerName) {
 			this.lcaCaseEmployerName = lcaCaseEmployerName;
 		}
-
-
+		
 	}
 
 

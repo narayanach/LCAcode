@@ -84,10 +84,10 @@ public class TextPair implements WritableComparable<TextPair> {
 			
 		}
 		public int compareTo(TextPair o) {  
-			int cmp  = this.first.compareTo(o.first);
+			int cmp  = this.second.compareTo(o.second);
 			if(cmp != 0)
 				return cmp;
-			return this.second.compareTo(o.second);
+			return this.first.compareTo(o.first);
 		}
 
 		@Override
@@ -124,6 +124,6 @@ public class TextPair implements WritableComparable<TextPair> {
 
 		@Override
 		public String toString() {
-			return  first + "\t" + second;
+			return  second + "\t" + first;
 			}
 }
