@@ -17,16 +17,16 @@ package lca.parsers;
 				 
 			String[] fields = record.split("\\|");
 				  
-			status 						= fields[1];
-			lcaCaseSubmit 				= fields[2];				 
-			lcaCaseEmployerName	     	= fields[7].replace(",", "\0").replace(".", "\0").replace("\" ", "\0").replace(" ", "\0");
+			status 					= fields[1];
+			lcaCaseSubmit 				= fields[2];		
+			lcaCaseEmployerName	     		= fields[7].replace(",", "\0").replace(".", "\0").replace("\" ", "\0").replace(" ", "\0");
 				
 		}
 
 		
 		public String getCaseSubmitYear() {
-			SimpleDateFormat origCaseSubmitYearFormat =	new SimpleDateFormat("MM/dd/yyyy");
-			SimpleDateFormat tgtCaseSubmitYearFormat =	new SimpleDateFormat("yyyy");
+			SimpleDateFormat origCaseSubmitYearFormat   =	new SimpleDateFormat("MM/dd/yyyy");
+			SimpleDateFormat tgtCaseSubmitYearFormat    =	new SimpleDateFormat("yyyy");
 			
 			
 			Date origDate = new Date();

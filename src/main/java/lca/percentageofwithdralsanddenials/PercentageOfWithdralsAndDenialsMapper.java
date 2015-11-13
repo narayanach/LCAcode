@@ -17,10 +17,11 @@ import lca.parsers.LCAparsers;
 		public enum NoOfRecords {
 			NO_OF_RECORDS
 		}
-		private static TextPair mapOutputKey = new TextPair();
+
+		private static TextPair mapOutputKey   = new TextPair();
 		private static LongPair mapOutputValue = new LongPair();
-		public static long var = new Long(0);
-		public static long number = new Long(0);
+		public static long var                 = new Long(0);
+		public static long number              = new Long(0);
 			
 		
 		public void map(LongWritable lineOffset, Text record, Context context) throws IOException, InterruptedException {

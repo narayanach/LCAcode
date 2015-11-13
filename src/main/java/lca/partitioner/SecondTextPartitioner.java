@@ -13,6 +13,7 @@ import lca.keyvalues.TextPair;
 		public int getPartition(TextPair key, LongPair value, int numPartitions) {
 		
 			int partitionValue = 0;
+
 			partitionValue = new Integer(key.getSecond().toString()).intValue() % numPartitions; 
 			return partitionValue;
 	

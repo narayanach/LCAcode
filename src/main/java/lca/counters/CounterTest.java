@@ -14,8 +14,8 @@ public class CounterTest extends Configured implements Tool {
 
 	public int run(String[] arg0) throws Exception {
 		
-		String jobID = arg0[0];
-		String groupName = arg0[1];
+		String jobID       = arg0[0];
+		String groupName   = arg0[1];
 		String counterName = arg0[2];
 		
 		Cluster cluster = new Cluster(getConf());

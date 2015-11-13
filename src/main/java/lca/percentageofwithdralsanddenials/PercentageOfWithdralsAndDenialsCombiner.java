@@ -11,14 +11,14 @@ import lca.keyvalues.TextPair;
 public class PercentageOfWithdralsAndDenialsCombiner extends Reducer<TextPair, LongPair, TextPair, LongPair> {
 
 	private static Long totalNumberOfCases = new Long(0);
-	private static Long noOfCasesDenied = new Long(0);
-	private static LongPair result = new LongPair();
+	private static Long noOfCasesDenied    = new Long(0);
+	private static LongPair result         = new LongPair();
 	
 	
 	public void reduce(TextPair inputKey, Iterable<LongPair> values, Context context) throws IOException, InterruptedException {
 	
 		totalNumberOfCases = new Long(0);
-		noOfCasesDenied = new Long(0);
+		noOfCasesDenied    = new Long(0);
 		for(LongPair value : values)
 		{
 		

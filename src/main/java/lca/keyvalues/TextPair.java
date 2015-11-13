@@ -17,25 +17,25 @@ public class TextPair implements WritableComparable<TextPair> {
 		
 		public TextPair() {
 			super();
-			this.first = new Text();
+			this.first  = new Text();
 			this.second = new Text();
-			this.third = new Text();
+			this.third  = new Text();
 		}
 
 		
 		public TextPair(Text first, Text second, Text third) {
 			super();
-			this.first = first;
+			this.first  = first;
 			this.second = second;
-			this.third = third;
+			this.third  = third;
 		}
 
 
 		public TextPair(String first, String second, Text third) {
 			super();
-			this.first = new Text(first);
+			this.first  = new Text(first);
 			this.second = new Text(second);
-			this.third = new Text(third);
+			this.third  = new Text(third);
 		}
 
 
@@ -74,26 +74,28 @@ public class TextPair implements WritableComparable<TextPair> {
 		public void readFields(DataInput arg0) throws IOException {  
 			this.first.readFields(arg0);
 			this.second.readFields(arg0);
-			//this.third.readFields(arg0);
 			
 		}
 		public void write(DataOutput arg0) throws IOException { 
 			this.first.write(arg0);
 			this.second.write(arg0);
-			//this.third.write(arg0);
 			
 		}
 		public int compareTo(TextPair o) {  
 			int cmp  = this.second.compareTo(o.second);
+
 			if(cmp != 0)
-				return cmp;
+			  return cmp;
+
 			return this.first.compareTo(o.first);
+
 		}
 
 		@Override
 		public int hashCode() {      
 			final int prime = 31;
 			int result = 1;
+
 			result = prime * result + ((first == null) ? 0 : first.hashCode());
 			result = prime * result + ((second == null) ? 0 : second.hashCode());
 			return result;

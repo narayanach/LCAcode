@@ -18,27 +18,27 @@ public class LongPair implements WritableComparable<LongPair> {
 		
 		public LongPair() {
 			super();
-			this.first = new LongWritable();
+			this.first  = new LongWritable();
 			this.second = new LongWritable();
-			this.third = new FloatWritable();
+			this.third  = new FloatWritable();
 		}
 		
 
 	
 		public LongPair(LongWritable first, LongWritable second, FloatWritable third) {
 			super();
-			this.first = first;
+			this.first  = first;
 			this.second = second;
-			this.third = third;
+			this.third  = third;
 		}
 
 
 
 		public LongPair(Long first, Long second, Float third) {   
 			super();
-			this.first = new LongWritable(first);
+			this.first  = new LongWritable(first);
 			this.second = new LongWritable(second);
-			this.third = new FloatWritable(third);
+			this.third  = new FloatWritable(third);
 		}
 		
 		public LongWritable getFirst() {   
@@ -75,11 +75,11 @@ public class LongPair implements WritableComparable<LongPair> {
 			this.second.write(arg0);
 			
 		}
-		public int compareTo(LongPair o) {   // unimplemented methods of WritableComparable interface
-			// TODO Auto-generated method stub
+		public int compareTo(LongPair o) {   
 			int cmp  = this.first.compareTo(o.first);
 			if(cmp != 0)
-				return cmp;
+			  return cmp;
+
 			return this.second.compareTo(o.second);
 		}
 
