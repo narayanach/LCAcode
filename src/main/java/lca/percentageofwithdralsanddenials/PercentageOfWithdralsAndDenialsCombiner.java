@@ -28,6 +28,7 @@ public class PercentageOfWithdralsAndDenialsCombiner extends Reducer<TextPair, L
 		}
 
 		result.setFirst(new LongWritable(totalNumberOfCases));
+
 		result.setSecond(new LongWritable(noOfCasesDenied));				
 		context.write(inputKey, result);
 	
